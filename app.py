@@ -92,5 +92,5 @@ if __name__ == '__main__':
         current_app.model = Detector()
     print("开始启动flask")
     # app.run(host='127.0.0.1', debug=True)
-    app.run(host='127.0.0.1',port=7070)
+    app.run(host='127.0.0.1',port=5003)
     print("flask启动完成")

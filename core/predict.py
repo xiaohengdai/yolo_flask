@@ -4,10 +4,12 @@ def predict(dataset, model, ext):
     global img_y
     x = dataset[0].replace('\\', '/')
     file_name = dataset[1]
-    print(x)
-    print(file_name)
+    print("x:",x)
+    print("file_name:",file_name)
     x = cv2.imread(x)
     img_y, image_info = model.detect(x)
-    if cv2.imwrite('./tmp/draw/{}.{}'.format(file_name, ext), img_y):
+    try:
+        cv2.imwrite('./tmp/draw/{}.{}'.format(file_name, ext), img_y)
+    except:
         raise Exception('保存图片时出错.Error saving thepicture.')
     return image_info
